@@ -1,3 +1,4 @@
+const albumCoverUrl=document.getElementById('knockCover').src;
 /* VANTA! official concept website — edit information in this file. */
 const members = [
   {id:'ihyeon',name:'서이현',latin:'SEO IHYEON',english:'IHYEON',number:'01',role:'LEADER · LEAD VOCAL',color:'#174BFF',image:'assets/seo-ihyeon.png',teaser:'assets/teaser-ihyeon.png',description:'어떤 무대에서도 중심을 잃지 않는 VANTA의 리더. 차분한 판단력과 단단한 존재감으로 팀의 방향을 이끈다.',keywords:['LEADERSHIP','COOL','STEADY'],mood:'THE UNWAVERING ONE'},
@@ -7,10 +8,7 @@ const members = [
   {id:'seoyul',name:'한서율',latin:'HAN SEOYUL',english:'SEOYUL',number:'05',role:'LEAD DANCER · MAKNAE',color:'#D4FF39',image:'assets/han-seoyul.png',teaser:'assets/teaser-seoyul.png',description:'발랄한 에너지와 생동감 넘치는 움직임으로 무대에 활기를 더하는 막내. 기대를 뛰어넘는 반전 매력의 소유자.',keywords:['DANCE','ENERGY','PLAYFUL'],mood:'THE WILD CARD'}
 ];
 const albums = [
-  {id:'spark',name:'SPARK!',chapter:'ERA 01',color:'#D4FF39',fg:'#174BFF',label:'THE BEGINNING',description:'설렘과 에너지가 터져 나오는 첫 번째 챕터. VANTA의 청량한 시작을 상징하는 콘셉트 앨범.'},
-  {id:'hyperdrive',name:'HYPERDRIVE',chapter:'ERA 02',color:'#FF5639',fg:'#FFFFFF',label:'FULL SPEED AHEAD',description:'멈추지 않고 질주하는 청춘의 속도. 더 강한 퍼포먼스를 보여주는 두 번째 챕터.'},
-  {id:'afterimage',name:'AFTERIMAGE',chapter:'ERA 03',color:'#8857FF',fg:'#FFFFFF',label:'NOTHING FADES',description:'빛이 지나간 자리에 남은 감각과 잔상. 몽환적인 음악적 방향을 담은 세 번째 챕터.'},
-  {id:'highvoltage',name:'HIGH VOLTAGE!',chapter:'ERA 04',color:'#174BFF',fg:'#D4FF39',label:'BORN TO BE LOUD',description:'한계 없이 뻗어가는 다섯 명의 에너지. VANTA의 가장 선명하고 대담한 챕터.'}
+  {id:'knockknock',name:'KNOCK KNOCK',chapter:'1ST MINI ALBUM',color:'#18191D',fg:'#D7D8DF',label:'THE DOOR IS NOT LOCKED.',cover:albumCoverUrl,description:'문 너머에서 들려오는 두 번의 노크. 검은 꽃과 닫힌 문, 보이지 않는 진실이 교차하는 VANTA의 첫 번째 미니앨범. 섬뜩하면서도 몽환적인 분위기를 담았다.'}
 ];
 const notices = [
   {tag:'NOTICE',title:'VANTA 공식 홈페이지를 소개합니다',body:'VANTA의 그룹 소개, 멤버 프로필, 디스코그래피 콘셉트와 비주얼 아카이브를 한곳에서 확인할 수 있는 공식 프로젝트 홈페이지입니다.'},
@@ -21,11 +19,12 @@ const notices = [
 const memberGrid=document.getElementById('memberGrid');
 memberGrid.innerHTML=members.map(m=>`<button type="button" class="member-card" data-member="${m.id}" data-id="${m.id}" style="--member-color:${m.color}" aria-label="${m.name} 상세 프로필 열기"><div class="member-image"><span class="member-number">${m.number}</span><img src="${m.image}" alt="${m.name} 원본 일러스트" loading="lazy"><span class="member-arrow">↗</span></div><div class="member-details"><h3>${m.name}</h3><p>${m.english} / ${m.role}</p></div><div class="member-strip"></div></button>`).join('');
 const musicGrid=document.getElementById('musicGrid');
-musicGrid.innerHTML=albums.slice(0,3).map(a=>`<button type="button" class="album-item" data-album="${a.id}"><div class="album-art" style="--album-bg:${a.color};--album-fg:${a.fg}"><strong>${a.name}</strong></div><div class="album-metadata">${a.chapter} / ${a.label}<span>↗</span></div></button>`).join('');
+musicGrid.innerHTML=''; // Only confirmed album appears in the main feature.
 const galleryEntries = [
   {image:'assets/group-teaser.png',label:'GROUP TEASER',kind:'teaser',wide:true},
   ...members.map(m=>({image:m.image,label:`${m.english} / PORTRAIT`,kind:'portrait',wide:false})),
   ...members.map(m=>({image:m.teaser,label:`${m.english} / TEASER`,kind:'teaser',wide:false})),
+  {image:albumCoverUrl,label:'KNOCK KNOCK / 1ST MINI ALBUM',kind:'album',wide:false},
   {image:'assets/vanta-original-logo.png',label:'VANTA! / OFFICIAL LOGO',kind:'logo',wide:false}
 ];
 const gallery=document.getElementById('gallery');
@@ -36,7 +35,7 @@ const overlay=document.getElementById('overlay');const dialogContent=document.ge
 function showDialog(html){lastFocused=document.activeElement;dialogContent.innerHTML=html;overlay.hidden=false;document.body.classList.add('lock-scroll');closeDialog.focus();}
 function hideDialog(){overlay.hidden=true;document.body.classList.remove('lock-scroll');dialogContent.innerHTML='';if(lastFocused&&lastFocused.focus)lastFocused.focus();}
 function memberDialog(id){const idx=members.findIndex(m=>m.id===id);const m=members[idx];if(!m)return;const next=members[(idx+1)%members.length];const prev=members[(idx-1+members.length)%members.length];showDialog(`<div class="profile-dialog" style="--member-color:${m.color}"><div class="profile-visual"><img src="${m.image}" alt="${m.name} 단독 초상화"><span>${m.number} / 05 · ${m.mood}</span></div><div class="profile-text"><div class="eyebrow">VANTA! / OFFICIAL MEMBER PROFILE</div><h2 id="dialogTitle">${m.name}<br><em>${m.english}.</em></h2><div class="profile-role">${m.role}</div><div class="profile-description">${m.description}</div><div class="profile-tags">${m.keywords.map(t=>`<span>${t}</span>`).join('')}</div><div class="profile-color"><div class="profile-swatch"></div>SIGNATURE COLOR / ${m.color.toUpperCase()}</div><a class="profile-photo-link" href="${m.teaser}" download="VANTA_${m.english}_TEASER.png">PERSONAL TEASER IMAGE ↓</a><div class="profile-next"><button type="button" data-profile-nav="${prev.id}">← PREV</button><button type="button" data-profile-nav="${next.id}">NEXT MEMBER →</button></div></div></div>`);}
-function albumDialog(id){const a=albums.find(v=>v.id===id);if(!a)return;showDialog(`<div class="album-dialog"><div class="eyebrow">${a.chapter} / VANTA! DISCOGRAPHY CONCEPT</div><h2 id="dialogTitle" style="color:${a.color==='#D4FF39'?'#174BFF':a.color}">${a.name}</h2><strong>${a.label}</strong><p>${a.description}</p><p>이 페이지는 VANTA의 가상 디스코그래피 콘셉트를 소개합니다. 트랙리스트와 세부 발매 정보는 미정입니다.</p></div>`);}
+function albumDialog(id){const a=albums.find(v=>v.id===id);if(!a)return;showDialog(`<div class="album-dialog"><img class="album-dialog-cover" src="${a.cover}" alt="${a.name} 앨범 커버" /><div class="eyebrow">${a.chapter} / VANTA! DISCOGRAPHY</div><h2 id="dialogTitle">${a.name}</h2><strong>${a.label}</strong><p>${a.description}</p><p>발매일 및 전체 트랙리스트는 추후 안내 예정입니다.</p></div>`);}
 function photoDialog(index){const item=galleryEntries[index];if(!item)return;showDialog(`<div class="photo-dialog"><img src="${item.image}" alt="${item.label}"><p id="dialogTitle">${item.label}</p><a class="profile-photo-link" href="${item.image}" download style="color:#d4ff39">OPEN ORIGINAL IMAGE ↓</a></div>`);}
 document.addEventListener('click',e=>{const m=e.target.closest('[data-member]');if(m){memberDialog(m.dataset.member);return;}const p=e.target.closest('[data-profile-nav]');if(p){memberDialog(p.dataset.profileNav);return;}const a=e.target.closest('[data-album]');if(a){albumDialog(a.dataset.album);return;}const g=e.target.closest('[data-photo]');if(g){photoDialog(Number(g.dataset.photo));return;}const n=e.target.closest('[data-notice]');if(n){const parent=n.parentElement;const open=parent.classList.toggle('is-open');n.setAttribute('aria-expanded',String(open));parent.querySelector('.notice-detail').hidden=!open;return;}});
 closeDialog.addEventListener('click',hideDialog);overlay.querySelector('[data-close]').addEventListener('click',hideDialog);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)hideDialog();if(e.key==='Tab'&&!overlay.hidden){const focusable=[...overlay.querySelectorAll('a[href],button:not([disabled])')].filter(el=>el.offsetParent!==null);if(focusable.length){const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}});

@@ -12,3 +12,18 @@
 }
 html,body{overflow-x:clip}
 @media(max-width:640px){.section-side{max-width:110px;overflow-wrap:break-word}}
+
+/* Background soundtrack control — actual audio file ships with this site. */
+.bgm-toggle{display:inline-flex;align-items:center;gap:9px;border:1.5px solid #101b44;background:#101b44;color:#f8fbff;border-radius:999px;padding:10px 13px;min-height:39px;cursor:pointer;font:800 10px/1 "DM Sans",sans-serif;letter-spacing:.11em;white-space:nowrap;transition:background .2s,border-color .2s,color .2s;}
+.bgm-toggle:hover,.bgm-toggle:focus-visible{background:#174bff;border-color:#174bff;outline-offset:3px;}
+.bgm-toggle[aria-pressed="true"]{background:#d4ff39;border-color:#d4ff39;color:#101b44;}
+.bgm-icon{display:inline-flex;align-items:center;justify-content:center;gap:2px;height:13px;width:15px;}
+.bgm-icon i{display:block;width:2px;height:4px;background:currentColor;border-radius:2px;}
+.bgm-toggle[aria-pressed="true"] .bgm-icon i:nth-child(1){animation:bgmWave .78s ease-in-out infinite alternate;}
+.bgm-toggle[aria-pressed="true"] .bgm-icon i:nth-child(2){animation:bgmWave .63s ease-in-out .16s infinite alternate;}
+.bgm-toggle[aria-pressed="true"] .bgm-icon i:nth-child(3){animation:bgmWave .85s ease-in-out .07s infinite alternate;}
+.bgm-toggle[aria-pressed="true"] .bgm-icon i:nth-child(4){animation:bgmWave .68s ease-in-out .2s infinite alternate;}
+@keyframes bgmWave {from {height:3px;} to {height:13px;}}
+@media(max-width:1060px){.header-caption{display:none;}.header-right{gap:10px;}}
+@media(max-width:640px){.bgm-toggle{padding:9px 10px;font-size:9px;min-height:36px;gap:6px}.header-right{gap:8px;}}
+@media(prefers-reduced-motion:reduce){.bgm-toggle .bgm-icon i{animation:none!important;}}

@@ -45,3 +45,46 @@ document.querySelectorAll('.filter').forEach(button=>button.addEventListener('cl
 const secretButton=document.getElementById('secretButton');secretButton.addEventListener('click',()=>{const el=document.getElementById('secretMessage');el.hidden=!el.hidden;secretButton.setAttribute('aria-expanded',String(!el.hidden));secretButton.firstChild.textContent=el.hidden?'UNLOCK THE OTHER SIDE ':'LOCK THE OTHER SIDE ';});
 const navLinks=[...document.querySelectorAll('.desktop-nav a')];const sections=[...document.querySelectorAll('main > section[id]')];if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('is-active',a.hash==='#'+entry.target.id));}})},{rootMargin:'-20% 0px -65% 0px',threshold:0});sections.forEach(s=>observer.observe(s));}
 /* Hero portraits are the user's original PixAI images; only DOM and CSS layout are applied. */
+
+
+// VANTA! home background music: 3rd uploaded instrumental.
+// Most browsers block audible autoplay until the visitor interacts.
+const siteBgm = document.getElementById('siteBgm');
+const bgmToggle = document.getElementById('bgmToggle');
+const bgmLabel = document.getElementById('bgmLabel');
+let bgmWasManuallyStopped = false;
+siteBgm.volume = 0.16;
+function refreshBgmButton() {
+  const playing = !siteBgm.paused && !siteBgm.ended;
+  bgmToggle.setAttribute('aria-pressed', String(playing));
+  bgmToggle.setAttribute('aria-label', playing ? '배경음악 끄기' : '배경음악 켜기');
+  bgmToggle.title = playing ? '배경음악 끄기' : '배경음악 켜기';
+  bgmLabel.textContent = playing ? 'SOUND ON' : 'SOUND OFF';
+}
+async function startBgm() {
+  try { await siteBgm.play(); } catch (_) { /* autoplay blocked: control remains available */ }
+  refreshBgmButton();
+}
+bgmToggle.addEventListener('click', () => {
+  if (siteBgm.paused) {
+    bgmWasManuallyStopped = false;
+    startBgm();
+  } else {
+    bgmWasManuallyStopped = true;
+    siteBgm.pause();
+    refreshBgmButton();
+  }
+});
+siteBgm.addEventListener('play', refreshBgmButton);
+siteBgm.addEventListener('pause', refreshBgmButton);
+siteBgm.addEventListener('error', () => {
+  bgmLabel.textContent = 'AUDIO ERROR';
+  bgmToggle.title = '오디오 파일을 확인해 주세요';
+});
+// Try once when the page opens. If the browser disallows this, start after
+// the first tap/click on the site; sound may always be disabled manually.
+window.addEventListener('load', startBgm, {once:true});
+document.addEventListener('pointerdown', (event) => {
+  if (!event.target.closest('#bgmToggle') && !bgmWasManuallyStopped && siteBgm.paused) startBgm();
+}, {once:true});
+refreshBgmButton();

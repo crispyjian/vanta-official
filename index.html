@@ -24,7 +24,7 @@
     <nav class="desktop-nav" aria-label="메인 메뉴">
       <a href="#home" class="is-active">HOME</a><a href="#artist">ARTIST</a><a href="#music">MUSIC</a><a href="#archive">ARCHIVE</a><a href="#schedule">SCHEDULE</a><a href="#notice">NOTICE</a>
     </nav>
-    <div class="header-right"><span class="header-caption">FIVE BOYS, ONE UNIVERSE</span><button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span></button></div>
+    <div class="header-right"><span class="header-caption">FIVE BOYS, ONE UNIVERSE</span><button class="bgm-toggle" id="bgmToggle" type="button" aria-label="배경음악 켜기" aria-pressed="false" title="배경음악 켜기"><span class="bgm-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="bgmLabel">SOUND OFF</span></button><button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span></button></div>
   </header>
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="모바일 메뉴"><a href="#home">01 HOME</a><a href="#artist">02 ARTIST</a><a href="#music">03 MUSIC</a><a href="#archive">04 ARCHIVE</a><a href="#schedule">05 SCHEDULE</a><a href="#notice">06 NOTICE</a></nav><small>VANTA! / OFFICIAL PROJECT</small></div>
 
@@ -71,6 +71,7 @@
   </main>
   <footer class="footer"><div class="footer-big">VANTA<span>!</span></div><div class="footer-cols"><div><strong>BORN TO BE LOUD.</strong><p>FIVE BOYS. ONE UNIVERSE.</p></div><div class="footer-links"><a href="#home">BACK TO TOP ↑</a><a href="#artist">MEMBERS ↗</a><a href="#archive">GALLERY ↗</a></div><div class="footer-legal">© VEILLINE ENTERTAINMENT<br>CREATIVE FICTIONAL IDOL PROJECT<br>FAN-MADE / NON-OFFICIAL REAL-WORLD GROUP</div></div></footer>
 
+  <audio id="siteBgm" src="assets/vanta-bgm.mp3" loop preload="metadata" aria-label="VANTA 홈페이지 배경음악"></audio>
   <div class="overlay" id="overlay" hidden><div class="overlay-shade" data-close></div><div class="overlay-panel" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><button type="button" class="close-dialog" id="closeDialog" aria-label="닫기">✕</button><div id="dialogContent"></div></div></div>
 </body>
 </html>

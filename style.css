@@ -27,3 +27,12 @@ html,body{overflow-x:clip}
 @media(max-width:1060px){.header-caption{display:none;}.header-right{gap:10px;}}
 @media(max-width:640px){.bgm-toggle{padding:9px 10px;font-size:9px;min-height:36px;gap:6px}.header-right{gap:8px;}}
 @media(prefers-reduced-motion:reduce){.bgm-toggle .bgm-icon i{animation:none!important;}}
+
+/* KNOCK KNOCK — only confirmed VANTA album */
+.release-art.knock-feature-art{padding:0;display:block;background:#050507;min-height:540px}
+.release-art.knock-feature-art::before,.release-art.knock-feature-art::after{display:none}
+.release-art.knock-feature-art img{height:100%;min-height:540px;width:100%;object-fit:cover;display:block}
+.music-grid:empty{display:none}
+.album-dialog-cover{display:block;width:min(420px,100%);aspect-ratio:1;object-fit:contain;margin:0 auto 35px;box-shadow:0 16px 44px rgba(0,0,0,.16)}
+.album-dialog h2{color:#161820}
+@media(max-width:640px){.release-art.knock-feature-art,.release-art.knock-feature-art img{min-height:360px}}

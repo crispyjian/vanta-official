@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "VANTA · 크랙 스토리 자동입력",
+  "description": "VANTA 멤버의 크랙 스토리 제작 칸에 초안을 입력합니다. 로그인과 최종 공개는 사용자가 직접 진행합니다.",
+  "version": "0.1.0",
+  "action": { "default_title": "VANTA 크랙 자동입력", "default_popup": "popup.html" },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://crack.wrtn.ai/*", "https://*.crack.wrtn.ai/*"]
+}

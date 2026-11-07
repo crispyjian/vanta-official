@@ -24,6 +24,14 @@
 .album-dialog h2{color:#161820}
 @media(max-width:640px){.release-art.knock-feature-art,.release-art.knock-feature-art img{min-height:360px}}
 
+
+/* VANTA THE OTHER SIDE — homepage universe entrance */
+@media(min-width:901px) and (max-width:1160px){.desktop-nav{gap:12px}.desktop-nav a{font-size:10px}.header-right{gap:10px}.site-header{padding-left:2.6vw;padding-right:2.6vw}}
+.universe-promo{color:#fff;background:radial-gradient(ellipse at 75% 50%,rgba(255,67,146,.62),transparent 34%),radial-gradient(ellipse at 83% 40%,rgba(212,255,57,.24),transparent 30%),linear-gradient(120deg,#09219e,#173af0 48%,#061a7e);position:relative;isolation:isolate;overflow:hidden;min-height:570px;padding:80px max(30px,6vw) 95px;display:flex;align-items:center}
+.universe-promo:before{content:'';position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(115deg,transparent 0 95px,rgba(255,255,255,.047) 96px 97px)}
+.uni-promo-content{z-index:2;position:relative}.uni-promo-eyebrow{font-size:11px;font-weight:900;letter-spacing:.17em}.universe-promo h2{font-weight:900;font-size:clamp(60px,8.4vw,144px);line-height:.82;letter-spacing:-.095em;font-style:italic;margin:35px 0 23px}.universe-promo h2 em{color:#d4ff39}.universe-promo h2 i{color:#ff9abf}.universe-promo p{font-size:14px;line-height:1.9;max-width:500px}.uni-promo-link{display:inline-flex;align-items:center;gap:40px;background:#fff;color:#132b9e;font-size:11px;font-weight:900;letter-spacing:.09em;padding:17px 21px;margin-top:18px}.uni-promo-link span{font-size:19px}.uni-promo-orbit{position:absolute;z-index:0;right:1%;top:7%;width:min(49vw,670px);aspect-ratio:1;border-radius:50%;border:2px solid rgba(255,255,255,.55);box-shadow:0 0 0 5vw rgba(255,255,255,.04),0 0 0 12vw rgba(255,255,255,.03);display:grid;place-items:center;transform:rotate(-20deg)}.uni-promo-orbit span{font-style:italic;font-size:clamp(200px,29vw,450px);font-weight:900;color:rgba(255,255,255,.18);letter-spacing:-.13em}.uni-promo-counter{position:absolute;right:max(24px,5vw);bottom:25px;font-weight:900;font-size:10px;letter-spacing:.13em}
+@media(max-width:640px){.universe-promo{min-height:575px;padding:80px 20px 75px}.universe-promo h2{font-size:clamp(60px,14vw,102px)}.uni-promo-orbit{right:-28%;top:13%;width:78vw;opacity:.52}.uni-promo-counter{left:20px;right:auto;font-size:8px}.universe-promo p{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -32,11 +40,11 @@
   <header class="site-header" id="siteHeader">
     <a href="#home" class="brand" aria-label="VANTA 홈페이지"><span class="brand-icon">✳</span>VANTA<span>!</span></a>
     <nav class="desktop-nav" aria-label="메인 메뉴">
-      <a href="#home" class="is-active">HOME</a><a href="#artist">ARTIST</a><a href="#music">MUSIC</a><a href="#archive">ARCHIVE</a><a href="#schedule">SCHEDULE</a><a href="#notice">NOTICE</a>
+      <a href="#home" class="is-active">HOME</a><a href="#artist">ARTIST</a><a href="universe.html">UNIVERSE</a><a href="#music">MUSIC</a><a href="#archive">ARCHIVE</a><a href="#schedule">SCHEDULE</a><a href="#notice">NOTICE</a>
     </nav>
     <div class="header-right"><span class="header-caption">FIVE BOYS, ONE UNIVERSE</span><button class="bgm-toggle" id="bgmToggle" type="button" aria-label="배경음악 켜기" aria-pressed="false" title="배경음악 켜기"><span class="bgm-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="bgmLabel">SOUND OFF</span></button><button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span></button></div>
   </header>
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="모바일 메뉴"><a href="#home">01 HOME</a><a href="#artist">02 ARTIST</a><a href="#music">03 MUSIC</a><a href="#archive">04 ARCHIVE</a><a href="#schedule">05 SCHEDULE</a><a href="#notice">06 NOTICE</a></nav><small>VANTA! / OFFICIAL PROJECT</small></div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="모바일 메뉴"><a href="#home">01 HOME</a><a href="#artist">02 ARTIST</a><a href="universe.html">03 UNIVERSE</a><a href="#music">04 MUSIC</a><a href="#archive">05 ARCHIVE</a><a href="#schedule">06 SCHEDULE</a><a href="#notice">07 NOTICE</a></nav><small>VANTA! / OFFICIAL PROJECT</small></div>
 
   <main id="main">
     <section id="home" class="hero section-anchor">
@@ -55,11 +63,22 @@
 
     <div class="ticker" aria-label="그룹 슬로건"><div class="ticker-track" aria-hidden="true">BORN TO BE LOUD <span>✳</span> FIVE BOYS, ONE UNIVERSE <span>✳</span> TURN IT UP <span>✳</span> BORN TO BE LOUD <span>✳</span> FIVE BOYS, ONE UNIVERSE <span>✳</span> TURN IT UP <span>✳</span></div></div>
 
-    <section class="identity-block" aria-label="그룹 소개"><div class="section-index">THE INTRODUCTION <span>V / 05</span></div><div class="identity-content"><div class="identity-icon">V<span>!</span></div><div><div class="eyebrow">THIS IS VANTA!</div><h2>LOUDER.<br><i>BRIGHTER.</i><br>TOGETHER.</h2><p>틀에 갇히지 않는 다섯 개의 에너지. 강렬한 퍼포먼스와 선명한 색으로 매 순간 새로운 이야기를 만드는 5인조 보이그룹, VANTA.</p><a href="#artist" class="text-link">DISCOVER OUR MEMBERS <span>↗</span></a></div></div></section>
+    <section class="identity-block" aria-label="그룹 소개"><div class="section-index">THE INTRODUCTION <span>V / 05</span></div><div class="identity-content"><div class="identity-icon">V<span>!</span></div><div><div class="eyebrow">THIS IS VANTA!</div><h2>LOUDER.<br><i>BRIGHTER.</i><br>TOGETHER.</h2><p>VANTA(반타)는 VEILLINE ENTERTAINMENT 소속의 5인조 보이그룹으로, 2021년 11월 12일 데뷔했다. 다섯 개의 선명한 색과 강렬한 퍼포먼스, BRIGHT SIDE와 DARK SIDE라는 독자적인 세계관을 통해 음악과 비주얼의 새로운 가능성을 선보인다.</p><a href="#artist" class="text-link">DISCOVER OUR MEMBERS <span>↗</span></a><a href="universe.html" class="text-link" style="margin-left:18px;color:#174bff">EXPLORE UNIVERSE <span>↗</span></a></div></div></section>
 
     <section id="artist" class="artist section-anchor"><div class="section-head"><div><div class="eyebrow">01 / THE ARTISTS</div><h2>MEET THE<br><em>BOYS<span>!</span></em></h2></div><div class="section-side">5 MEMBERS<br>5 COLORS<br>1 TEAM.</div></div>
       <div class="member-grid" id="memberGrid"></div>
       <div class="artist-footer"><span>SELECT A MEMBER TO VIEW THEIR PROFILE.</span><span>VANTA! © VEILLINE</span></div>
+    </section>
+
+
+    <section class="universe-promo" aria-labelledby="uniPromoTitle">
+      <div class="uni-promo-orbit" aria-hidden="true"><span>V</span></div>
+      <div class="uni-promo-content"><div class="uni-promo-eyebrow">OFFICIAL UNIVERSE / THE OTHER SIDE</div>
+        <h2 id="uniPromoTitle">BRIGHT<br><em>SIDE.</em><br>DARK <i>SIDE.</i></h2>
+        <p>빛의 세계와 그림자의 세계, 그 경계에 선 다섯 명의 공명자.<br>FIVE COLORS. TWO WORLDS. ONE VANTA.</p>
+        <a href="universe.html" class="uni-promo-link">ENTER THE UNIVERSE <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="uni-promo-counter">02 WORLDS / 05 RESONATORS / 47 SECONDS</span>
     </section>
 
     <section id="music" class="music section-anchor"><div class="section-head light"><div><div class="eyebrow">02 / DISCOGRAPHY</div><h2>OUR<br><em>SOUND.</em></h2></div><p class="section-copy">VANTA의 첫 번째 미니앨범.<br>문이 열리기 전, 두 번의 노크.</p></div>
@@ -79,7 +98,7 @@
 
     <section id="notice" class="notice section-anchor"><div class="section-head light"><div><div class="eyebrow">05 / LATEST UPDATES</div><h2>THE<br><em>BULLETIN.</em></h2></div><div class="section-side">OFFICIAL UPDATES<br>& ANNOUNCEMENTS</div></div><div class="notice-list" id="noticeList"></div></section>
   </main>
-  <footer class="footer"><div class="footer-big">VANTA<span>!</span></div><div class="footer-cols"><div><strong>BORN TO BE LOUD.</strong><p>FIVE BOYS. ONE UNIVERSE.</p></div><div class="footer-links"><a href="#home">BACK TO TOP ↑</a><a href="#artist">MEMBERS ↗</a><a href="#archive">GALLERY ↗</a></div><div class="footer-legal">© VEILLINE ENTERTAINMENT<br>CREATIVE FICTIONAL IDOL PROJECT<br>FAN-MADE / NON-OFFICIAL REAL-WORLD GROUP</div></div></footer>
+  <footer class="footer"><div class="footer-big">VANTA<span>!</span></div><div class="footer-cols"><div><strong>BORN TO BE LOUD.</strong><p>FIVE BOYS. ONE UNIVERSE.</p></div><div class="footer-links"><a href="#home">BACK TO TOP ↑</a><a href="#artist">MEMBERS ↗</a><a href="universe.html">UNIVERSE ↗</a><a href="#archive">GALLERY ↗</a></div><div class="footer-legal">© VEILLINE ENTERTAINMENT<br>CREATIVE FICTIONAL IDOL PROJECT<br>FAN-MADE / NON-OFFICIAL REAL-WORLD GROUP</div></div></footer>
 
   <audio id="siteBgm" src="assets/vanta-bgm.mp3" loop preload="metadata" aria-label="VANTA 홈페이지 배경음악"></audio>
   <div class="overlay" id="overlay" hidden><div class="overlay-shade" data-close></div><div class="overlay-panel" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><button type="button" class="close-dialog" id="closeDialog" aria-label="닫기">✕</button><div id="dialogContent"></div></div></div>

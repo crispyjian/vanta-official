@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101431">
+<meta name="description" content="VANTA THE OTHER SIDE — BRIGHT SIDE와 DARK SIDE, 다섯 공명자의 세계관을 탐험하세요.">
+<title>VANTA! — THE OTHER SIDE / UNIVERSE</title>
+<link rel="icon" href="assets/vanta-original-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#174bff;--lime:#d4ff39;--pink:#ff4392;--ink:#101323;--font:'DM Sans','Noto Sans KR',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font);background:#070912;color:#fff;-webkit-font-smoothing:antialiased}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:auto}button:focus-visible,a:focus-visible{outline:3px solid #d4ff39;outline-offset:4px}
+body.dialog-open{overflow:hidden}.section-anchor{scroll-margin-top:78px}
+.topbar{position:fixed;inset:0 0 auto;z-index:100;min-height:73px;padding:13px max(20px,4.5vw);display:flex;align-items:center;gap:24px;background:rgba(8,11,24,.91);border-bottom:1px solid rgba(255,255,255,.13);backdrop-filter:blur(18px)}
+.logo{display:flex;gap:10px;align-items:center;font-size:26px;font-weight:900;font-style:italic;letter-spacing:-.09em}.logo img{width:34px;height:34px;object-fit:contain}.logo b{color:var(--lime)}
+.toplinks{margin-left:auto;display:flex;align-items:center;gap:23px}.toplinks a{font-size:10px;font-weight:800;letter-spacing:.12em;white-space:nowrap}.toplinks a.active{color:var(--lime)}
+.sound{color:#fff;white-space:nowrap;background:#22283c;border:1px solid #4b526b;border-radius:30px;padding:10px 14px;font-size:10px;font-weight:800;letter-spacing:.11em}.sound[aria-pressed=true]{background:var(--lime);border-color:var(--lime);color:#121729}
+.hero{min-height:760px;height:100svh;position:relative;padding:160px max(28px,6.5vw) 60px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 76% 28%,rgba(212,255,57,.44),transparent 27%),radial-gradient(ellipse at 80% 55%,rgba(255,67,146,.69),transparent 33%),radial-gradient(ellipse at 20% 70%,rgba(26,74,255,.87),transparent 47%),#0b185b}
+.hero:before{content:'';position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(107deg,transparent 0 94px,rgba(255,255,255,.07) 95px 96px);mix-blend-mode:screen}.hero:after{content:'';position:absolute;right:-19vw;bottom:-48vw;width:90vw;height:90vw;border:1px solid rgba(255,255,255,.5);border-radius:50%;box-shadow:0 0 0 9vw rgba(255,255,255,.035),0 0 0 19vw rgba(255,255,255,.06),0 0 0 29vw rgba(255,255,255,.025);transform:rotate(-25deg);pointer-events:none}
+.hero-top{position:relative;z-index:1;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.17em;font-weight:900}
+.hero-copy{position:relative;z-index:2;margin-top:8vh;width:min(900px,90%)}.kicker{display:block;font-size:11px;font-weight:800;letter-spacing:.2em}.hero h1{font-size:clamp(85px,13vw,214px);letter-spacing:-.105em;line-height:.74;font-style:italic;font-weight:900;margin:35px 0}.hero h1 em{color:var(--lime)}.hero h1 .period{color:var(--pink)}.hero p{font-size:clamp(15px,1.55vw,21px);max-width:590px;line-height:1.8;font-weight:650;letter-spacing:-.02em}.hero-small{margin-top:30px;max-width:490px!important;opacity:.87;font-size:13px!important;font-weight:500!important}.enter{display:inline-flex;align-items:center;gap:50px;margin-top:25px;background:#fff;padding:17px 23px;color:#101c6f;font-size:11px;font-weight:900;letter-spacing:.09em}.enter span{font-size:23px}.hero-footer{position:absolute;bottom:30px;left:max(28px,6.5vw);right:max(28px,6.5vw);display:flex;justify-content:space-between;gap:15px;font-size:10px;letter-spacing:.17em;font-weight:900}
+.world{min-height:740px;position:relative;display:grid;grid-template-columns:1fr 1fr;isolation:isolate;overflow:hidden;padding:90px max(25px,6.5vw);align-items:center}.world:before{content:'';position:absolute;inset:0;z-index:-1;opacity:.7;background:repeating-linear-gradient(-30deg,transparent 0 125px,rgba(255,255,255,.025) 126px 127px)}
+.world.bright{background:radial-gradient(ellipse at 83% 52%,#fff57e 0,rgba(220,255,89,.8) 11%,transparent 32%),radial-gradient(ellipse at 72% 57%,rgba(255,67,146,.9),transparent 47%),linear-gradient(125deg,#1343f9,#052891 63%,#091c65)}.world.dark{background:radial-gradient(ellipse at 17% 50%,rgba(137,17,48,.4),transparent 36%),radial-gradient(ellipse at 40% 30%,rgba(72,79,127,.26),transparent 43%),#050508}
+.world-copy{position:relative;z-index:3;max-width:580px}.world.dark .world-copy{grid-column:2;grid-row:1;padding-left:4vw}.world-label{font-size:11px;font-weight:900;letter-spacing:.19em}.world h2{font-size:clamp(80px,10vw,156px);line-height:.76;letter-spacing:-.1em;font-weight:900;font-style:italic;margin:30px 0 24px}.world h2 em{color:var(--lime)}.world.dark h2 em{color:#bc9ea8}.world-title{display:block;font-size:12px;font-weight:900;letter-spacing:.17em;margin-bottom:26px}.world p{font-size:15px;line-height:2;max-width:450px;color:#fff;opacity:.92}.world-link{display:inline-flex;align-items:center;gap:33px;margin-top:28px;padding-bottom:10px;border-bottom:2px solid currentColor;font-size:11px;letter-spacing:.12em;font-weight:900}
+.world-scene{width:100%;height:min(640px,70vw);position:relative;display:grid;place-items:center;isolation:isolate}.world.dark .world-scene{grid-column:1;grid-row:1}.orb{width:74%;height:74%;border:1px solid rgba(255,255,255,.65);position:absolute;border-radius:50%;transform:rotateX(62deg) rotate(-23deg);box-shadow:0 0 85px rgba(255,255,255,.1)}.orb.orb2{width:91%;height:91%;transform:rotateY(72deg) rotate(25deg);opacity:.7}.gateway{width:36%;height:72%;border:7px solid rgba(255,255,255,.85);border-radius:48% 48% 4px 4px/20% 20% 4px 4px;background:linear-gradient(110deg,rgba(255,255,255,.78),rgba(106,167,255,.65),rgba(255,255,255,.12));box-shadow:0 0 0 15px rgba(255,255,255,.1),0 0 80px rgba(190,254,244,.75),inset 0 0 55px #fff;position:relative;transform:perspective(900px) rotateY(-18deg)}.gateway:before{content:'';position:absolute;top:0;bottom:0;left:47%;width:2px;background:rgba(255,255,255,.62)}
+.world.dark .gateway{border-color:#35333b;background:linear-gradient(110deg,#191923,#040306 65%,#30313d);box-shadow:0 0 0 16px #13111b,0 0 0 18px #48414a,0 0 105px rgba(139,30,70,.32),inset 0 0 85px #000}.world.dark .gateway:before{background:#322d3a}.gateway-knob{position:absolute;right:10%;top:51%;width:9px;height:9px;border-radius:50%;background:#fff8bb;box-shadow:0 0 24px #fff8bb}.world.dark .gateway-knob{background:#8d7480;box-shadow:0 0 16px #8d223c}
+.spark{position:absolute;font-size:clamp(50px,8vw,120px);color:#eaff8e;text-shadow:0 0 30px #fff;opacity:.86}.spark.a{top:8%;right:2%}.spark.b{bottom:3%;left:8%;font-size:60px}.world.dark .spark{color:#a98a95;text-shadow:0 0 30px #5a1128}.world-number{position:absolute;bottom:25px;right:6%;font-size:11px;font-weight:800;letter-spacing:.19em;opacity:.7}
+.gate-interlude{text-align:center;padding:115px 22px;background:radial-gradient(ellipse at 50% 30%,#242333,#090911 73%);border-top:1px solid #454451;border-bottom:1px solid #454451}.gate-interlude .kicker{color:#c6c3d8}.knocks{font-size:clamp(45px,8vw,125px);font-style:italic;font-weight:900;letter-spacing:-.085em;margin:30px 0}.knocks b{color:var(--pink)}.gate-interlude p{color:#c8c8d4;max-width:610px;margin:0 auto;font-size:15px;line-height:1.9}.gate-numbers{margin:38px auto 0;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;color:#e8e8ed;font-size:11px;letter-spacing:.13em;font-weight:900}
+.resonators{background:#f0f1f4;color:#151726;padding:110px max(22px,4.5vw)}.res-head{display:flex;justify-content:space-between;align-items:end;gap:35px}.res-head h2{font-size:clamp(70px,10vw,150px);letter-spacing:-.09em;line-height:.8;font-weight:900;margin:21px 0 0;font-style:italic}.res-head h2 em{color:#174bff}.res-head p{max-width:390px;color:#5e6276;line-height:1.9;font-size:13px}.side-switch{display:flex;align-items:center;gap:8px;margin:55px 0 18px;flex-wrap:wrap}.side-switch button{background:transparent;border:1px solid #9299aa;padding:14px 18px;font-size:11px;font-weight:900;letter-spacing:.08em;color:#444959}.side-switch button.active{color:#fff;border-color:#174bff;background:#174bff}.resonators[data-side=dark] .side-switch button.active{background:#13131b;border-color:#13131b}.side-switch small{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.13em;color:#6d7586}
+.res-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}.res-card{display:flex;flex-direction:column;text-align:left;background:#fff;border:0;padding:0;overflow:hidden;box-shadow:0 0 0 1px rgba(13,15,30,.08);transition:transform .22s,box-shadow .22s}.res-card:hover{transform:translateY(-7px);box-shadow:7px 10px 0 var(--accent)}.res-photo{display:block;height:260px;position:relative;overflow:hidden;background:#e2e3e7}.res-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}.res-mark{position:absolute;bottom:8px;right:11px;font-size:44px;font-weight:900;color:var(--accent);text-shadow:0 0 8px #fff}.res-info{display:flex;flex-direction:column;gap:8px;padding:17px 13px 20px;flex:1;border-top:6px solid var(--accent)}.res-name{font-size:17px;font-weight:900;letter-spacing:-.04em}.res-name small{display:block;font-size:9px;color:#777c89;letter-spacing:.08em;margin-top:3px}.res-title{font-size:19px;font-weight:900;letter-spacing:-.06em;color:var(--accent)}.res-domain{font-size:9px;font-weight:800;color:#70788d;letter-spacing:.09em}.res-description{font-size:12px;color:#494f61;line-height:1.85;min-height:92px}.res-arrow{margin-top:auto;padding-top:15px;border-top:1px solid #dde0e6;font-size:9px;font-weight:900;letter-spacing:.06em}
+.res-footer{display:flex;justify-content:space-between;margin-top:22px;color:#727787;font-size:10px;font-weight:800;letter-spacing:.12em}
+.outro{padding:140px max(24px,7vw);background:#0b0b12;position:relative;overflow:hidden}.outro:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 90% 20%,rgba(255,67,146,.15),transparent 31%),radial-gradient(circle at 10% 100%,rgba(23,75,255,.2),transparent 40%)}.outro>*{position:relative}.outro .kicker{color:var(--lime)}.outro h2{font-size:clamp(50px,10.5vw,155px);font-weight:900;letter-spacing:-.095em;line-height:.9;margin:40px 0}.outro h2 em{color:var(--pink);font-style:italic}.outro a{display:inline-block;background:var(--lime);color:#111527;padding:17px 22px;font-size:11px;font-weight:900;letter-spacing:.1em}
+.foot{padding:35px max(24px,4.5vw);background:#06070b;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#9ea3b5;letter-spacing:.1em}.foot a{color:#fff;font-weight:800}
+dialog{position:fixed;inset:0;max-width:min(900px,calc(100vw - 24px));max-height:90vh;margin:auto;padding:0;border:0;background:#fff;color:#141622;box-shadow:0 30px 100px rgba(0,0,0,.7);overflow:auto}dialog::backdrop{background:rgba(0,0,0,.83);backdrop-filter:blur(10px)}.dialog-close{position:sticky;top:10px;margin:10px 10px -50px auto;z-index:5;display:block;border:0;background:#d4ff39;color:#101427;width:40px;height:40px;font-size:22px}.dialog-inner{display:grid;grid-template-columns:42% 58%}.dialog-inner img{height:100%;max-height:800px;object-fit:cover}.dialog-detail{padding:65px 35px 45px}.dialog-detail .kicker{color:#174bff}.dialog-detail h2{font-size:clamp(42px,6vw,73px);line-height:.9;letter-spacing:-.08em;margin:25px 0}.dialog-detail h2 em{display:block;color:var(--accent)}.dialog-domain{font-size:11px;font-weight:900;letter-spacing:.1em}.dialog-section{border-top:1px solid #dadee6;padding:22px 0}.dialog-section b{font-size:11px;letter-spacing:.1em}.dialog-section p{color:#505468;font-size:13px;line-height:1.9}.dialog-symbols{font-size:10px;letter-spacing:.12em;color:#6d7181;font-weight:900}
+@media(max-width:1100px){.res-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.res-photo{height:300px}.world{min-height:650px}.world h2{font-size:clamp(70px,10vw,112px)}}
+@media(max-width:750px){.topbar{padding:13px 16px;gap:10px;flex-wrap:wrap}.logo{font-size:20px}.logo img{height:28px;width:28px}.toplinks{gap:11px;overflow-x:auto}.toplinks a{font-size:9px}.sound{padding:8px;font-size:9px}.hero{min-height:700px;height:95svh;padding:145px 20px 70px}.hero-copy{width:100%;margin-top:45px}.hero h1{font-size:clamp(72px,18vw,128px)}.hero-top,.hero-footer{font-size:8px}.hero-footer{left:20px;right:20px}.world{display:flex;flex-direction:column;align-items:stretch;padding:90px 22px 55px;gap:10px}.world-copy{max-width:none}.world.dark .world-copy{padding-left:0}.world h2{font-size:clamp(78px,17vw,122px)}.world p{font-size:13px}.world-scene{height:360px}.world-number{bottom:18px}.resonators{padding:80px 18px}.res-head{display:block}.res-head p{margin-top:28px}.res-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.res-photo{height:235px}.res-name{font-size:15px}.res-title{font-size:17px}.res-description{min-height:120px;font-size:11px}.res-info{padding:13px 10px 17px}.side-switch small{width:100%;margin:5px 0}.dialog-inner{grid-template-columns:1fr}.dialog-inner img{height:300px;object-position:center 15%}.dialog-detail{padding:45px 24px 30px}.foot{display:block;line-height:2}}
+@media(max-width:390px){.topbar{gap:5px}.toplinks a{font-size:8px}.sound{font-size:8px}.hero h1{font-size:70px}.res-photo{height:180px}.res-description{min-height:150px}.res-title{font-size:15px}.res-domain{font-size:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <a class="logo" href="index.html#home" aria-label="VANTA 공식 홈페이지"><img src="assets/vanta-original-logo.png" alt=""><span>VANTA<b>!</b></span></a>
+ <nav class="toplinks" aria-label="상단 메뉴"><a href="index.html#home">HOME</a><a href="index.html#artist">ARTIST</a><a href="universe.html" class="active" aria-current="page">UNIVERSE</a><a href="index.html#music">MUSIC</a></nav>
+ <button id="sound" class="sound" aria-pressed="false" type="button">SOUND OFF</button>
+</header>
+<main>
+<section class="hero section-anchor" id="top" aria-labelledby="universeTitle">
+ <div class="hero-top"><span>VEILLINE ENTERTAINMENT / VANTA</span><span>OFFICIAL UNIVERSE</span></div>
+ <div class="hero-copy">
+  <span class="kicker">FIVE COLORS. TWO WORLDS. ONE VANTA.</span>
+  <h1 id="universeTitle">THE<br><em>OTHER</em><br>SIDE<span class="period">.</span></h1>
+  <p>빛이 모든 진실을 보여주지는 않는다.<br>어둠이 반드시 악을 의미하지도 않는다.</p>
+  <p class="hero-small">하나였던 세계가 빛과 그림자로 나뉜 뒤, 서로 다른 두 세계의 경계에 반응하는 다섯 존재가 나타났다. 그들의 이름은 VANTA.</p>
+  <a class="enter" href="#bright">EXPLORE THE UNIVERSE <span>↓</span></a>
+ </div>
+ <div class="hero-footer"><span>02 WORLDS / 05 RESONATORS / 47 SECONDS</span><span>SCROLL TO DISCOVER ↓</span></div>
+</section>
+<section class="world bright section-anchor" id="bright">
+ <div class="world-copy">
+ <span class="world-label">01 / THE WORLD OF LIGHT</span>
+ <h2>BRIGHT<br><em>SIDE.</em></h2>
+ <span class="world-title">THE WORLD OF INFINITE POSSIBILITIES</span>
+ <p>빛과 가능성으로 이루어진 세계. 선명한 색채와 찬란한 에너지가 존재하며, 모든 것이 이상적인 모습으로 빛나는 공간이다.</p>
+ <p>이곳에서 다섯 공명자는 서로 다른 능력을 통해 세계의 균형을 유지한다. 그러나 완벽한 아름다움 뒤에는 아직 밝혀지지 않은 비밀이 존재한다.</p>
+ <a class="world-link" href="#dark">DISCOVER THE DARK SIDE ↓</a>
+ </div>
+ <div class="world-scene" aria-hidden="true"><span class="orb"></span><span class="orb orb2"></span><span class="gateway"><i class="gateway-knob"></i></span><span class="spark a">✳</span><span class="spark b">✦</span></div>
+ <span class="world-number">VANTA / WORLD 01</span>
+</section>
+<section class="world dark section-anchor" id="dark">
+ <div class="world-copy">
+ <span class="world-label">02 / THE WORLD OF SHADOWS</span>
+ <h2>DARK<br><em>SIDE.</em></h2>
+ <span class="world-title">WHERE FORGOTTEN MEMORIES REMAIN</span>
+ <p>사라진 기억과 버려진 감정이 머무는 또 하나의 세계. 끝없는 복도, 거꾸로 흐르는 시간과 열리지 않는 문이 존재한다.</p>
+ <p>같은 능력도 전혀 다른 모습으로 발현되며, 어둠 너머에는 VANTA를 닮은 또 다른 존재들이 기다리고 있다.</p>
+ <a class="world-link" href="#resonators">MEET THE FIVE RESONATORS ↓</a>
+ </div>
+ <div class="world-scene" aria-hidden="true"><span class="orb"></span><span class="orb orb2"></span><span class="gateway"><i class="gateway-knob"></i></span><span class="spark a">✶</span><span class="spark b">✧</span></div>
+ <span class="world-number">VANTA / WORLD 02</span>
+</section>
+<section class="gate-interlude" aria-label="두 세계를 잇는 문">
+ <span class="kicker">THE GATE BETWEEN TWO WORLDS</span>
+ <div class="knocks">KNOCK <b>·</b> KNOCK</div>
+ <p>두 세계의 경계에 문이 나타나는 순간, 단 47초 동안 현실과 환상의 기억이 교차한다. 다섯 개의 힘이 하나로 공명할 때 문은 완전히 열릴 수 있다.</p>
+ <div class="gate-numbers"><span>02 KNOCKS</span><span>47 SECONDS</span><span>05 POWERS</span></div>
+</section>
+<section id="resonators" class="resonators section-anchor" data-side="bright">
+ <div class="res-head"><div><span class="kicker">THE FIVE RESONATORS</span><h2>FIVE<br><em>POWERS.</em></h2></div><p>두 세계의 경계에 반응하는 다섯 명의 공명자. 각자의 힘은 BRIGHT SIDE와 DARK SIDE에서 서로 다른 방식으로 나타난다.</p></div>
+ <div class="side-switch" role="group" aria-label="능력의 세계 선택">
+ <button type="button" class="active" data-side="bright" aria-pressed="true">✦ BRIGHT SIDE</button><button type="button" data-side="dark" aria-pressed="false">◈ DARK SIDE</button><small>SWITCH THEIR POWERS ↗</small>
+ </div>
+ <div class="res-grid"><button class="res-card" type="button" data-member="ihyeon" style="--accent:#3264ff" aria-label="서이현 세계관 상세 보기"><span class="res-photo"><img src="assets/seo-ihyeon.png" alt="서이현 멤버 원본 이미지" loading="lazy"><span class="res-mark">◇</span></span><span class="res-info"><span class="res-name">서이현<small>SEO IHYEON</small></span><span class="res-title">THE KEEPER</span><span class="res-domain">SPACE & BOUNDARY</span><span class="res-description" data-bright="멀리 떨어진 공간을 연결하고, 새로운 길과 안전한 통로를 만들어낸다." data-dark="경계를 봉쇄하고, 공간의 출구를 지워 누구도 쉽게 빠져나갈 수 없도록 만든다.">멀리 떨어진 공간을 연결하고, 새로운 길과 안전한 통로를 만들어낸다.</span><span class="res-arrow">EXPLORE PROFILE ↗</span></span></button>
+<button class="res-card" type="button" data-member="sion" style="--accent:#ff4392" aria-label="백시온 세계관 상세 보기"><span class="res-photo"><img src="assets/baek-sion.png" alt="백시온 멤버 원본 이미지" loading="lazy"><span class="res-mark">✧</span></span><span class="res-info"><span class="res-name">백시온<small>BAEK SION</small></span><span class="res-title">THE MIRAGE</span><span class="res-domain">LIGHT & ILLUSION</span><span class="res-description" data-bright="빛의 굴절을 조종해 아름다운 환영과 새로운 풍경을 창조한다." data-dark="현실과 환상의 경계를 흐려 눈앞의 풍경을 전혀 다른 모습으로 보이게 한다.">빛의 굴절을 조종해 아름다운 환영과 새로운 풍경을 창조한다.</span><span class="res-arrow">EXPLORE PROFILE ↗</span></span></button>
+<button class="res-card" type="button" data-member="dogyeom" style="--accent:#ff684b" aria-label="차도겸 세계관 상세 보기"><span class="res-photo"><img src="assets/cha-dogyeom.png" alt="차도겸 멤버 원본 이미지" loading="lazy"><span class="res-mark">✳</span></span><span class="res-info"><span class="res-name">차도겸<small>CHA DOGYEOM</small></span><span class="res-title">THE BREAKER</span><span class="res-domain">ENERGY & VIBRATION</span><span class="res-description" data-bright="파동과 에너지의 흐름을 조율해 불안정한 힘을 안정시킨다." data-dark="강렬한 진동으로 물질과 공간의 결합에 균열을 일으킨다.">파동과 에너지의 흐름을 조율해 불안정한 힘을 안정시킨다.</span><span class="res-arrow">EXPLORE PROFILE ↗</span></span></button>
+<button class="res-card" type="button" data-member="taegyeong" style="--accent:#a98aff" aria-label="유태경 세계관 상세 보기"><span class="res-photo"><img src="assets/yoo-taegyeong.png" alt="유태경 멤버 원본 이미지" loading="lazy"><span class="res-mark">◎</span></span><span class="res-info"><span class="res-name">유태경<small>YOO TAEGYEONG</small></span><span class="res-title">THE ECHO</span><span class="res-domain">MEMORY & EMOTION</span><span class="res-description" data-bright="감정의 파동에 공명해 잊힌 마음과 소중한 기억을 되살린다." data-dark="숨겨진 기억을 불러내 오래 묻혀 있던 장면과 마주하게 한다.">감정의 파동에 공명해 잊힌 마음과 소중한 기억을 되살린다.</span><span class="res-arrow">EXPLORE PROFILE ↗</span></span></button>
+<button class="res-card" type="button" data-member="seoyul" style="--accent:#d4ff39" aria-label="한서율 세계관 상세 보기"><span class="res-photo"><img src="assets/han-seoyul.png" alt="한서율 멤버 원본 이미지" loading="lazy"><span class="res-mark">⟲</span></span><span class="res-info"><span class="res-name">한서율<small>HAN SEOYUL</small></span><span class="res-title">THE LOOP</span><span class="res-domain">TIME & POSSIBILITY</span><span class="res-description" data-bright="시간을 짧게 가속하고 가까운 미래의 다양한 가능성을 관측한다." data-dark="순간을 정지하거나 최대 47초 동안 반복하게 만든다.">시간을 짧게 가속하고 가까운 미래의 다양한 가능성을 관측한다.</span><span class="res-arrow">EXPLORE PROFILE ↗</span></span></button></div>
+ <div class="res-footer"><span>SELECT A MEMBER TO EXPLORE</span><span>VANTA / THE OTHER SIDE</span></div>
+</section>
+<section class="outro">
+ <span class="kicker">THE STORY BEGINS WITH A KNOCK</span>
+ <h2>THE PARADISE<br>WAS NEVER <em>REAL.</em></h2>
+ <a href="index.html#music">DISCOVER KNOCK KNOCK ↗</a>
+</section>
+</main>
+<footer class="foot"><span>© VEILLINE ENTERTAINMENT · VANTA! FICTIONAL ARTIST PROJECT</span><a href="index.html#home">BACK TO VANTA! ↗</a></footer>
+<audio id="bgm" src="assets/vanta-bgm.mp3" loop preload="metadata"></audio>
+<dialog id="profileDialog" aria-labelledby="profileName"><button class="dialog-close" id="dialogClose" aria-label="프로필 닫기">✕</button><div id="profileContent"></div></dialog>
+<script>
+const members=[{"id":"ihyeon","ko":"서이현","en":"SEO IHYEON","title":"THE KEEPER","domain":"SPACE & BOUNDARY","color":"#3264ff","symbol":"◇","pic":"assets/seo-ihyeon.png","bright":"멀리 떨어진 공간을 연결하고, 새로운 길과 안전한 통로를 만들어낸다.","dark":"경계를 봉쇄하고, 공간의 출구를 지워 누구도 쉽게 빠져나갈 수 없도록 만든다.","icons":"KEY / DOOR / DIMENSION"},{"id":"sion","ko":"백시온","en":"BAEK SION","title":"THE MIRAGE","domain":"LIGHT & ILLUSION","color":"#ff4392","symbol":"✧","pic":"assets/baek-sion.png","bright":"빛의 굴절을 조종해 아름다운 환영과 새로운 풍경을 창조한다.","dark":"현실과 환상의 경계를 흐려 눈앞의 풍경을 전혀 다른 모습으로 보이게 한다.","icons":"MIRROR / LIGHT / ILLUSION"},{"id":"dogyeom","ko":"차도겸","en":"CHA DOGYEOM","title":"THE BREAKER","domain":"ENERGY & VIBRATION","color":"#ff684b","symbol":"✳","pic":"assets/cha-dogyeom.png","bright":"파동과 에너지의 흐름을 조율해 불안정한 힘을 안정시킨다.","dark":"강렬한 진동으로 물질과 공간의 결합에 균열을 일으킨다.","icons":"CRACK / WAVE / LIGHTNING"},{"id":"taegyeong","ko":"유태경","en":"YOO TAEGYEONG","title":"THE ECHO","domain":"MEMORY & EMOTION","color":"#a98aff","symbol":"◎","pic":"assets/yoo-taegyeong.png","bright":"감정의 파동에 공명해 잊힌 마음과 소중한 기억을 되살린다.","dark":"숨겨진 기억을 불러내 오래 묻혀 있던 장면과 마주하게 한다.","icons":"ECHO / MEMORY / RIPPLE"},{"id":"seoyul","ko":"한서율","en":"HAN SEOYUL","title":"THE LOOP","domain":"TIME & POSSIBILITY","color":"#d4ff39","symbol":"⟲","pic":"assets/han-seoyul.png","bright":"시간을 짧게 가속하고 가까운 미래의 다양한 가능성을 관측한다.","dark":"순간을 정지하거나 최대 47초 동안 반복하게 만든다.","icons":"CLOCK / BUTTERFLY / LOOP"}];
+const panel=document.getElementById('resonators');
+panel.querySelectorAll('.side-switch button[data-side]').forEach(button=>{
+ button.addEventListener('click',()=>{
+   const side=button.dataset.side;panel.dataset.side=side;
+   panel.querySelectorAll('.side-switch button[data-side]').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+   panel.querySelectorAll('.res-description').forEach(el=>el.textContent=el.dataset[side]);
+ });
+});
+const dialog=document.getElementById('profileDialog');
+document.querySelectorAll('.res-card').forEach(card=>card.addEventListener('click',()=>{
+ const m=members.find(m=>m.id===card.dataset.member);if(!m)return;
+ document.getElementById('profileContent').innerHTML='<div class="dialog-inner" style="--accent:'+m.color+'"><img src="'+m.pic+'" alt="'+m.ko+' 원본 프로필"><div class="dialog-detail"><span class="kicker">VANTA / THE OTHER SIDE</span><h2 id="profileName">'+m.ko+'<em>'+m.title+'</em></h2><p class="dialog-domain">'+m.domain+'</p><div class="dialog-section"><b>BRIGHT SIDE</b><p>'+m.bright+'</p></div><div class="dialog-section"><b>DARK SIDE</b><p>'+m.dark+'</p></div><p class="dialog-symbols">SYMBOLS / '+m.icons+'</p><a class="dialog-domain" href="index.html#artist">OFFICIAL ARTIST PROFILE ↗</a></div></div>';
+ dialog.showModal();document.body.classList.add('dialog-open');
+}));
+const closeDialog=()=>{dialog.close();document.body.classList.remove('dialog-open')};
+document.getElementById('dialogClose').addEventListener('click',closeDialog);
+dialog.addEventListener('click',e=>{if(e.target===dialog)closeDialog()});
+dialog.addEventListener('close',()=>document.body.classList.remove('dialog-open'));
+const audio=document.getElementById('bgm');const sound=document.getElementById('sound');audio.volume=.16;
+function labelSound(){const on=!audio.paused;sound.textContent=on?'SOUND ON':'SOUND OFF';sound.setAttribute('aria-pressed',String(on))}
+sound.addEventListener('click',async()=>{if(audio.paused){try{await audio.play()}catch(e){}}else audio.pause();labelSound()});
+audio.addEventListener('play',labelSound);audio.addEventListener('pause',labelSound);
+</script>
+</body></html>
